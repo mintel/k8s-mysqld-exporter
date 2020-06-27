@@ -16,7 +16,11 @@ LABEL maintainer="Nick Badger <nbadger@mintel.com>" \
       org.opencontainers.image.revision="$VCS_REF"
 
 COPY --from=banzaicloud/vault-env:1.3.2 /usr/local/bin/vault-env /usr/local/bin/
-COPY --from=prom/mysqld-exporter:v0.12.1 /bin/mysqld_exporter /bin
+
+# Temp copy fow since it fixes a bug in dsn handling.
+# https://github.com/prometheus/mysqld_exporter/pull/485
+# COPY --from=prom/mysqld-exporter:v0.12.1 /bin/mysqld_exporter /bin
+COPY --from=nabadger/mysql-exporter:0.12.1_mintel-fix-dsn /bin/mysqld_exporter /bin
 
 RUN adduser -D -s /bin/sh -u 1000 mintel --home /home/mintel
 
