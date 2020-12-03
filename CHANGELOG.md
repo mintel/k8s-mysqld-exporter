@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.12.1+mintel.0.2.1 (2020-11-13)
+### Fixed
+- Fix `cut` command and ensure we keep all chars from the environment variable
+
 ## 0.12.1+mintel.0.2.0 (2020-11-13)
 ### Changed
 - Add `VAULT_ENABLED` option to enable/disable use of `vault-env`
