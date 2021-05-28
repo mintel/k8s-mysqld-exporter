@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Bump `mysqld_exporter` to `v0.13.0`
 - Remove vault-cli (not used)
+- Bump to `alpine:3.13`
 
 ## 0.12.1+mintel.0.2.1 (2020-12-03)
 ### Fixed
